@@ -16,7 +16,7 @@ public class DataController {
 		return "The current time is: " + LocalTime.now().toString();
 	}
 	
-	@GetMapping("{:name}")
+	@GetMapping("{name}")
 	public String sayHello(@PathVariable String name) {
 		return "Hello " + name;
 	}
