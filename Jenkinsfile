@@ -23,10 +23,7 @@ pipeline {
 		}
 		stage('Push'){
 			steps {
-				script {
-					def newApp = docker.build "ammonking/hello-deployment:latest"
-					newApp.push()
-				}
+				sh 'docker ps -a'
 			}
 		}
 				
