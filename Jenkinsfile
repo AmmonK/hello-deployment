@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Test') {
 			steps {
-				sh './mvnw test'
+				sh 'sudo ./mvnw test'
 			}
 		}
 		stage('Build') {
