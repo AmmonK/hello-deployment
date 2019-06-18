@@ -2,8 +2,10 @@ pipeline {
 	agent any
 	stages {
 		stage('Test') {
+			conatiner('maven') {
 			steps {
 				sh 'sudo ./mvnw test'
+			}
 			}
 		}
 		stage('Build') {
