@@ -13,12 +13,7 @@ pipeline {
 		}
 		stage('Build') {
 			steps {
-			 	sh 'mvn install dockerfile:build'
-			}
-		}
-		stage('Publish') {
-			steps {
-				sh 'docker push ammonking/hello-deployment:latest'
+			 	sh 'mvn install dockerfile:build -Dpushimage'
 			}
 		}
 	}
