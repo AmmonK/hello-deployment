@@ -22,9 +22,11 @@ pipeline {
 			}
 		}
 		stage('Push'){
-			script {
-				def newApp = docker.build "ammonking/hello-deployment:latest"
-				newApp.push()
+			steps {
+				script {
+					def newApp = docker.build "ammonking/hello-deployment:latest"
+					newApp.push()
+				}
 			}
 		}
 				
