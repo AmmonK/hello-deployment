@@ -6,6 +6,10 @@ node {
 
         checkout scm
     }
+    
+    stage('Build Project') {
+        sh "./mvn clean install"
+    }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
