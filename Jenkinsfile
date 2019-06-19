@@ -7,7 +7,7 @@ node {
         checkout scm
     }
     
-    stage('Build Project') {
+    stage('BuildProject') {
         sh "./mvnw clean install"
     }
 
