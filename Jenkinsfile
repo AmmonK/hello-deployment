@@ -8,7 +8,7 @@ node {
     }
     
     stage('Build Project') {
-        sh "./mvn clean install"
+        sh "./mvnw clean install"
     }
 
     stage('Build image') {
