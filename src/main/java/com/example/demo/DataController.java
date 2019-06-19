@@ -13,7 +13,7 @@ public class DataController {
 
 	@GetMapping()
 	public String getTime() {
-		return "The current time is: " + LocalTime.now().toString();
+		return "The current time: " + LocalTime.now().toString();
 	}
 	
 	@GetMapping("{name}")
