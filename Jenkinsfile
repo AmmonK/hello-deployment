@@ -3,12 +3,15 @@ node {
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
-
         checkout scm
+        sh "chmod 711 ./mvnw"
     }
     
-    stage('BuildProject') {
-        sh "chmod 711 ./mvnw"
+    stage('Test Project') {
+        sh "./mvnw test"
+    }
+    
+    stage('Build Project') {        
         sh "./mvnw clean install"
     }
 
@@ -17,15 +20,6 @@ node {
          * docker build on the command line */
 
         app = docker.build("ammonking/hello-deployment")
-    }
-
-    stage('Test image') {
-        /* Ideally, we would run a test framework against our image.
-         * For this example, we're using a Volkswagen-type approach ;-) */
-
-        
-            sh 'echo "Tests passed"'
-        
     }
 
     stage('Push image') {
