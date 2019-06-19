@@ -8,7 +8,7 @@ node {
     }
     
     stage('BuildProject') {
-        sh "chmod 400 ./mvnw"
+        sh "chmod 711 ./mvnw"
         sh "./mvnw clean install"
     }
 
